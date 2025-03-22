@@ -1,19 +1,24 @@
 public class Pedometer {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws NegativeException {
         int steps1 = 5345;
         double yourValue;
-    yourValue = stepsToMiles(steps1);
+        yourValue = stepsToMiles(steps1);
         System.out.printf("%.2f\n", yourValue);
-    int steps2 = -3850;
-        double yourValue2;
-        yourValue2 = stepsToMiles(steps2);
-        System.out.printf("%.2f", yourValue);
+        try {
+            int steps2 = -3850;
+            double yourValue2;
+            yourValue2 = stepsToMiles(steps2);
+            System.out.printf("%.2f", yourValue2);
+        }
+        catch (Exception NegativeException) {
+            System.out.println(NegativeException.getMessage());
+        }
     }
 
-    public static double stepsToMiles(int steps) throws Exception{
-        if (steps < 0) {
-            throw new Exception("Exception: Negative step count entered");
-        }
-        return steps / 2000.0;
+    public static double stepsToMiles(int steps) throws NegativeException {
+            if (steps < 0) {
+                throw new NegativeException("Exception: Negative step count entered");
+            }
+        return steps/2000.00;
     }
 }
