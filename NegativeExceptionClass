@@ -1,0 +1,9 @@
+public class NegativeException extends Exception{
+    public NegativeException() {
+        super("Exception: Negative step count entered");
+    }
+
+    public NegativeException(String message) {
+        super(message);
+    }
+}
