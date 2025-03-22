@@ -17,7 +17,7 @@ public class Pedometer {
 
     public static double stepsToMiles(int steps) throws NegativeException {
             if (steps < 0) {
-                throw new NegativeException("Exception: Negative step count entered");
+                throw new NegativeException();
             }
         return steps/2000.00;
     }
